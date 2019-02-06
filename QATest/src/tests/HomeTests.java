@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 import pages.HomePage;
 import utilities.BaseTest;
 
-public class HomePageTests extends BaseTest {
+public class HomeTests extends BaseTest {
 
 	@Test
 	public void verifyHomePage() {
@@ -27,6 +27,6 @@ public class HomePageTests extends BaseTest {
 	public void verifySearchBox() {
 		HomePage home = new HomePage(driver);
 		home.goToHomePage();
-		home.searchProduct("ipad");
+		home.searchProduct("ipad air 2 case");
 	}
 }

@@ -1,6 +1,7 @@
 package utilities;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -28,6 +29,12 @@ public class BasePage {
 	public void writeText(By elementBy, String text) {
 		waitVisibility(elementBy);
 		driver.findElement(elementBy).sendKeys(text);
+	}
+	
+	public void writeTextAndEnter(By elementBy, String text) {
+		waitVisibility(elementBy);
+		driver.findElement(elementBy).sendKeys(text);
+		driver.findElement(elementBy).sendKeys(Keys.ENTER);
 	}
 	
 	public String readText(By elementBy) {

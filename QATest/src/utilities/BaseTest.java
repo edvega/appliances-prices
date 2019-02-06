@@ -9,8 +9,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
@@ -20,7 +20,7 @@ public class BaseTest {
 			File.separator + "driverExecutables" + File.separator;
 
 	@Parameters({"browser", "driverName"})
-	@BeforeTest
+	@BeforeClass
 	public void setupDriver(String browser, String driverFileName) {
 		
 		String osName = (System.getProperty("os.name").toLowerCase().contains("mac") ? "mac" : "windows");
@@ -44,9 +44,8 @@ public class BaseTest {
 		driver.manage().window().maximize();
 	}
 
-	@AfterTest
+	@AfterClass
 	public void tearDown() {
-		
 		if (driver != null) {
 			driver.quit();
 		}

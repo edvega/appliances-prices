@@ -20,9 +20,9 @@ public class HomePage extends BasePage {
 		return this;
 	}
 	
-	public HomePage searchProduct(String text) {
-		writeText(searchBox, text);
-		return this;
+	public SearchResultsPage searchProduct(String text) {
+		goToHomePage().writeTextAndEnter(searchBox, text);
+		return new SearchResultsPage(driver);
 	}
 	
 	public HomePage goToMyCart() {
