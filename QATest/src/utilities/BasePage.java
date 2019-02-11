@@ -18,7 +18,7 @@ public class BasePage {
 	}
 	
 	public void waitVisibility(By elementBy) {
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(elementBy));
+		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementBy));
 	}
 	
 	public void click(By elementBy) {

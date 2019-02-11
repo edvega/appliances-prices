@@ -11,19 +11,20 @@ import utilities.BaseTest;
 
 public class SearchResultsTests extends BaseTest {
 
-	@Test
+	@Test(priority = 0)
 	public void selectPlasticCase() {
 		HomePage home = new HomePage(driver);
 		home.searchProduct("ipad air 2 case").selectPlasticMaterial();
 	}
 
-	@Test
+	@Test(priority = 1)
 	public void verifyPriceRange() {
 		HomePage home = new HomePage(driver);
-		home.searchProduct("ipad air 2 case").searchByPriceRange("20", "100");
+		home.searchProduct("ipad air 2 case").selectPlasticMaterial()
+			.searchByPriceRange("20", "100");
 	}
 	
-	@Test
+	@Test(priority = 2)
 	public void resultsBetweenPriceRange() {
 		HomePage home = new HomePage(driver);
 		ArrayList<WebElement> items = home.searchProduct("ipad air 2 case")
@@ -32,9 +33,7 @@ public class SearchResultsTests extends BaseTest {
 		System.out.println(items.size());
 		for (int i = 0; i < 5; i++) {
 			System.out.println(items.get(i)
-					.findElements(By.xpath("/div/div")).size());
+					.findElements(By.tagName("div")).size());
 		}
 	}
-	
-	//*[@id="result_0"]/div/div[5]/div[1]/a/span[1]
 }

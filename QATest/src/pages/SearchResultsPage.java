@@ -10,11 +10,10 @@ import utilities.BasePage;
 
 public class SearchResultsPage extends BasePage {
 
-	private By plastic = By.xpath("//*[@id='leftNavContainer']/ul[2]/div/li[1]/span/span/div/label/span/span");
+	private By plastic = By.xpath("//*[contains(text(),'Plastic')]");
 	private By searchByMinPriceBox = By.id("low-price");
 	private By searchByHighPriceBox = By.id("high-price");
-	private By searchPriceRangeGoButton = By.xpath("//input[@value='Go'][1]");
-	private By resultItemsList = By.xpath("//ul[@id='s-results-list-atf']/li");
+	private By resultItemsList = By.cssSelector(".s-result-list.sg-row");
 	
 	public SearchResultsPage(WebDriver driver) {
 		super(driver);
@@ -27,8 +26,7 @@ public class SearchResultsPage extends BasePage {
 	
 	public SearchResultsPage searchByPriceRange(String minPrice, String maxPrice) {
 		writeText(searchByMinPriceBox, minPrice);
-		writeText(searchByHighPriceBox, maxPrice);
-		click(searchPriceRangeGoButton);
+		writeTextAndEnter(searchByHighPriceBox, maxPrice);
 		return this;
 	}
 	

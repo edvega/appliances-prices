@@ -2,24 +2,24 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Amazon Tests" verbose="10" thread-count="1"
 	parallel="tests">
-	<groups>
-		<run>
-			<exclude name="depricated" />
-		</run>
-	</groups>
-
 	<listeners>
 		<listener class-name="org.uncommons.reportng.HTMLReporter" />
 		<listener class-name="org.uncommons.reportng.JUnitXMLReporter" />
 	</listeners>
-
-	<parameter name="browser" value="chrome"></parameter>
-	<parameter name="driverName" value="chromedriver"></parameter>
 	
 	<test name="Amazon Test" preserve-order="true">
-		<packages>
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="driverName" value="chromedriver"></parameter>
+		<classes>
+			<class name="tests.SearchResultsTests">
+				<methods>
+					<include name="resultsBetweenPriceRange"></include>
+				</methods>
+			</class>
+		</classes>
+		<!-- <packages>
 			<package name="tests.*" />
-		</packages>
+		</packages> -->
 	</test>
 
 </suite>

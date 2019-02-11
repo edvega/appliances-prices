@@ -9,6 +9,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -34,7 +35,12 @@ public class BaseTest {
 		}
 
 		else if (browser.equals("firefox")) {
-			// Add config
+			if (osName.equals("windows")) {
+				System.setProperty("webdriver.gecko.driver", pathToDriver + driverFileName);
+			} else {
+				System.setProperty("webdriver.gecko.driver", pathToDriver + driverFileName);
+			}
+			driver = new FirefoxDriver();
 		}
 
 		else if (browser.equals("iexplorer")) {
