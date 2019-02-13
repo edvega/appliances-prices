@@ -30,10 +30,13 @@ public class SearchResultsTests extends BaseTest {
 		ArrayList<WebElement> items = home.searchProduct("ipad air 2 case")
 				.selectPlasticMaterial().searchByPriceRange("20", "100")
 				.getResultsItems();
-		System.out.println(items.size());
+		
 		for (int i = 0; i < 5; i++) {
 			System.out.println(items.get(i)
-					.findElements(By.tagName("div")).size());
+					.findElement(By.xpath("//div[@class='sg-row'][2]/div[2]/div/div/h5/a/span")).getText());
+			
+			System.out.println(items.get(i)
+					.findElement(By.xpath("//div[@class='sg-row'][2]/div[3]/div/div/div/div/a/span/span")).getText());
 		}
 	}
 }

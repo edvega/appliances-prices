@@ -13,7 +13,7 @@ public class SearchResultsPage extends BasePage {
 	private By plastic = By.xpath("//*[contains(text(),'Plastic')]");
 	private By searchByMinPriceBox = By.id("low-price");
 	private By searchByHighPriceBox = By.id("high-price");
-	private By resultItemsList = By.cssSelector(".s-result-list.sg-row");
+	private By resultItemsList = By.xpath("//div[@class='s-result-list sg-row']/div/div/div/div");
 	
 	public SearchResultsPage(WebDriver driver) {
 		super(driver);
