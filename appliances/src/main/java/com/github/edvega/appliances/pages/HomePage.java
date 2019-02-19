@@ -30,8 +30,8 @@ public class HomePage extends BasePage {
 	
 	public HomePage goToAppliances() {
 		hover(departments);
-		//hover(appliances);
-		//hoverAndClick(fridges);
+		hover(appliances);
+		hoverAndClick(fridges);
 		return this;
 	}
 	

@@ -21,7 +21,7 @@ public class BasePage {
 	}
 	
 	public void waitVisibility(By elementBy) {
-		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementBy));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(elementBy));
 	}
 	
 	public void hover(By elementBy) {
