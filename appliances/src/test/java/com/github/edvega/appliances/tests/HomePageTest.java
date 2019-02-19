@@ -7,9 +7,28 @@ import com.github.edvega.appliances.utilities.BaseTest;
 
 public class HomePageTest extends BaseTest {
 
-	@Test
+	@Test(priority = 0)
 	public void verifyHomePage() {
 		HomePage home = new HomePage(driver);
 		home.goToHomePage();
+	}
+	
+	@Test(priority = 2)
+	public void clickCart() {
+		HomePage home = new HomePage(driver);
+		home.goToHomePage().goToShoppingCart();
+	}
+	
+	@Test(priority = 1)
+	public void verifySearchBox() {
+		HomePage home = new HomePage(driver);
+		home.goToHomePage().searchItem("ray ban wayfarer");
+	}
+	
+	@Test(priority = 3)
+	public void seeAppliancesSection() {
+		HomePage home = new HomePage(driver);
+		home.goToHomePage().goToAppliances();
+		takeScreenshot("seeAppliancesSection");
 	}
 }

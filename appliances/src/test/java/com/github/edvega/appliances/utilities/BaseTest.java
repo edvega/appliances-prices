@@ -46,7 +46,7 @@ public class BaseTest {
 	public void takeScreenshot(String testName) {
 		File img = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
-			FileUtils.copyFile(img, new File("utilities/" + testName + ".png"));
+			FileUtils.copyFile(img, new File("ss/" + testName + ".png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

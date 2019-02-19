@@ -2,7 +2,6 @@ package com.github.edvega.appliances.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import com.github.edvega.appliances.utilities.BasePage;
 
@@ -30,11 +29,9 @@ public class HomePage extends BasePage {
 	}
 	
 	public HomePage goToAppliances() {
-		Actions action = new Actions(driver);
-		action.moveToElement(driver.findElement(departments))
-			.moveToElement(driver.findElement(appliances))
-			.moveToElement(driver.findElement(fridges))
-			.click().perform();
+		hover(departments);
+		//hover(appliances);
+		//hoverAndClick(fridges);
 		return this;
 	}
 	

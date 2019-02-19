@@ -3,6 +3,7 @@ package com.github.edvega.appliances.utilities;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -11,14 +12,26 @@ public class BasePage {
 	
 	public WebDriver driver;
 	public WebDriverWait wait;
+	public Actions action;
 	
 	public BasePage (WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, 15);
+		action = new Actions(driver);
 	}
 	
 	public void waitVisibility(By elementBy) {
 		wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(elementBy));
+	}
+	
+	public void hover(By elementBy) {
+		waitVisibility(elementBy);
+		action.moveToElement(driver.findElement(elementBy)).perform();
+	}
+	
+	public void hoverAndClick(By elementBy) {
+		waitVisibility(elementBy);
+		action.moveToElement(driver.findElement(elementBy)).click().perform();
 	}
 	
 	public void click(By elementBy) {
