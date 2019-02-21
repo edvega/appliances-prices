@@ -9,6 +9,13 @@
 	<test thread-count="5" name="HomePageTests">
 		<parameter name="browser" value="chrome"></parameter>
 		<parameter name="driverName" value="chromedriver"></parameter>
+		<!-- 
+		<groups>
+			<run>
+				<include name="login" />
+			</run>
+		</groups>
+		-->
 		<classes>
 			<class name="com.github.edvega.appliances.tests.HomePageTest" />
 		</classes>

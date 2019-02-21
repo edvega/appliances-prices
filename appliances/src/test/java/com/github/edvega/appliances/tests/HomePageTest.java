@@ -29,6 +29,11 @@ public class HomePageTest extends BaseTest {
 	public void seeAppliancesSection() {
 		HomePage home = new HomePage(driver);
 		home.goToHomePage().goToAppliances();
-		takeScreenshot("seeAppliancesSection");
+	}
+	
+	@Test(priority = 4, groups = {"login"})
+	public void openLoginForm() {
+		HomePage home = new HomePage(driver);
+		home.goToHomePage().goToLogin("useruser", "1234");
 	}
 }

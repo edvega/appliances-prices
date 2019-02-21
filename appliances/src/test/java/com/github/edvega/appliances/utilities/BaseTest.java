@@ -10,8 +10,8 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
 public class BaseTest {
@@ -20,8 +20,8 @@ public class BaseTest {
 	static String pathToDriver = Paths.get("").toAbsolutePath().toString() + 
 			File.separator + "drivers" + File.separator;
 	
+	@BeforeTest(alwaysRun = true)
 	@Parameters({"browser", "driverName"})
-	@BeforeClass
 	public void setupDriver(String browser, String driverFileName) {
 
 		if (browser.equals("chrome")) {
@@ -35,7 +35,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 	}
 	
-	@AfterClass
+	@AfterTest(alwaysRun = true)
 	public void tearDown() {
 		
 		if (driver != null) {
