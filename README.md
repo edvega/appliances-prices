@@ -1,2 +1,2 @@
-# automation-test
- Automation exercise for automation tester position
+# appliances-prices
+ Appliances prices tracker to buy things for my new place
