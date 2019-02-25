@@ -10,8 +10,8 @@ public class AppliancesPageTest extends BaseTest {
 	@Test
 	public void verifyFilterHeader() {
 		HomePage home = new HomePage(driver);
-		home.goToHomePage().goToAppliances();
-		//System.out.println(ome.goToAppliances().getFilterHeader());
+		String title = home.goToHomePage().goToAppliances().getFilterHeader();
+		System.out.println(title);
 	}
 	
 }

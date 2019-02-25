@@ -9,9 +9,9 @@ public class HomePage extends BasePage {
 	
 	private String baseUrl = "https://www.liverpool.com.mx";
 	private By searchBox = By.id("buscador");
-	private By departments = By.xpath("//ul[@id='menu']/li");
-	private By appliances = By.xpath("//ul[@id='menu']/li/ul/li[12]");
-	private By fridges = By.xpath("//*[contains(text(),'Refrigeradores y Congeladores')]");
+	private By departments = By.linkText("Departamentos");
+	private By appliances = By.partialLinkText("Línea Blanca");
+	private By fridges = By.partialLinkText("Refrigeradores y Congeladores");
 	private By cart = By.id("bag");
 	private By loginButton = By.id("login_btn");
 	private By user = By.id("login");

@@ -21,9 +21,9 @@
 		</classes>
 	</test>
 	
-	<test name="Appliances">
-		<parameter name="browser" value="chrome"></parameter>
-		<parameter name="driverName" value="chromedriver"></parameter>
+	<test name="AppliancesPageTests">
+		<parameter name="browser" value="firefox"></parameter>
+		<parameter name="driverName" value="geckodriver"></parameter>
 		
 		<classes>
 			<class name="com.github.edvega.appliances.tests.AppliancesPageTest" />

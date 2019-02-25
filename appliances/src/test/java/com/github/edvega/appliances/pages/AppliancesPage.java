@@ -8,7 +8,7 @@ import com.github.edvega.appliances.utilities.BasePage;
 
 public class AppliancesPage extends BasePage {
 
-	private By filterHeader = By.xpath("/html/body/div[3]/div/div[2]/div[1]/div/div/div/div/h2");
+	private By filterHeader = By.xpath("//div[@class='fac-wrapper']/h2");
 	private By productsCounter = By.xpath("//div[@id='product-total']/p/span");
 	private By filterBlock = By.id("filterBlock");
 	private By orderBy = By.xpath("//div[@id='controls-top']/div[4]/div/label/select");
