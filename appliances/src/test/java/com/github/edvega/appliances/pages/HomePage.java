@@ -31,11 +31,11 @@ public class HomePage extends BasePage {
 		return this;
 	}
 	
-	public HomePage goToAppliances() {
+	public AppliancesPage goToAppliances() {
 		hover(departments);
 		hover(appliances);
 		hoverAndClick(fridges);
-		return this;
+		return new AppliancesPage(driver);
 	}
 	
 	public HomePage searchItem(String item) {

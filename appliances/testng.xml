@@ -5,7 +5,7 @@
 		<listener class-name="com.github.edvega.appliances.utilities.Listeners" />
 		<listener class-name="com.github.edvega.appliances.utilities.ExtentReporterNG" />
 	</listeners>
-
+	
 	<test thread-count="5" name="HomePageTests">
 		<parameter name="browser" value="chrome"></parameter>
 		<parameter name="driverName" value="chromedriver"></parameter>
@@ -15,9 +15,18 @@
 				<include name="login" />
 			</run>
 		</groups>
-		-->
+		 -->
 		<classes>
 			<class name="com.github.edvega.appliances.tests.HomePageTest" />
 		</classes>
-	</test> <!-- Test -->
+	</test>
+	
+	<test name="Appliances">
+		<parameter name="browser" value="chrome"></parameter>
+		<parameter name="driverName" value="chromedriver"></parameter>
+		
+		<classes>
+			<class name="com.github.edvega.appliances.tests.AppliancesPageTest" />
+		</classes>
+	</test>
 </suite> <!-- Suite -->
